@@ -30,7 +30,6 @@ let displayRecipes =(meals)=>{
 
 document.getElementById('searchBtn').addEventListener('click', searchRecipe=(e)=>{
     e.preventDefault();
-
     let search = document.getElementById('Search');
     search.classList.add('d-none');
     loader(true);
@@ -43,6 +42,7 @@ document.getElementById('searchBtn').addEventListener('click', searchRecipe=(e)=
 
 document.getElementById('searchBox').addEventListener('keypress', searchEnter =(e)=>{
     if(e.key === 'Enter' ){
+        e.preventDefault();
         loader(true);
         let inputText = document.getElementById('searchBox');
         let inputValue = inputText.value;
